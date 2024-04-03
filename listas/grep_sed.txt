@@ -1,0 +1,10 @@
+Este é um arquivo de exemplo.
+Ele contém algumas linhas de texto para fins de teste.
+Vamos ver como os comandos GREP e SED funcionam com estas linhas.
+Linha com a palavra teste.
+Linha com a palavra GREP.
+Linha com a palavra SED.
+Linha com a palavra exemplo no final.
+Esta linha não tem a palavra "teste".
+1234567890
+42 é a resposta para a vida, o universo e tudo mais.
