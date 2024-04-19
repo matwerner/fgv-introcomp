@@ -1,5 +1,11 @@
 # LaTeX
 
+Tutorial de LaTeX:
+https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes
+
+Tutorial de Beamer:
+https://pt.overleaf.com/learn/latex/Beamer
+
 ## Introdução
 
 LaTeX é um sistema de preparação de documentos de alta qualidade, amplamente utilizado para a produção de documentos técnicos e científicos, como artigos acadêmicos, relatórios, teses, livros, apresentações e cartas. Em vez de se concentrar na formatação visual do documento, como em editores de texto convencionais, o LaTeX permite que os autores se concentrem no conteúdo, enquanto o sistema cuida da formatação e da apresentação.
@@ -126,6 +132,7 @@ Este é o terceiro parágrafo, com espaçamento adicional.
 ### Imagens
 
 ```tex
+\usepackage{graphicx} % Pacote para inserção de imagens
 \includegraphics{imagem.png}
 \includegraphics[width=0.5\textwidth]{imagem.png} % Escala para 50% da largura do texto
 ```
@@ -156,15 +163,78 @@ Este é o terceiro parágrafo, com espaçamento adicional.
 \end{tabular}
 ```
 
-### Matemática
+### Equações Matemáticas
+
+```tex
+$E=mc^2$ % inline
+
+% ou
+
+\[ E=mc^2 \]
+
+% ou
+
+\begin{equation}
+    E=mc^2
+\end{equation}
+
+% ou
+
+$$E=mc^2$$
+
+```
+
+```tex
+
+% Somatario
+$$ \sum_{i=1}^{n} x_i $$ 
+
+% Produtorio
+$$ \prod_{i=1}^{n} x_i $$ 
+
+% Limites
+
+$$ \lim_{x\to\infty} f(x) $$
+
+% Integral
+$$ \int_{a}^{b} x^2 \,dx $$
+
+% Derivada
+$$ \frac{   \partial{f(x)}   } {\partial{x}} $$
+
+```
+
+```tex
+$$ \alpha \sigma \beta \theta$$
+```
+
+### Referencia cruzada
+
+```tex
+\begin{equation}
+\label{eq:test1}
+    E=mc^2
+\end{equation}
+
+Equação \ref{eq:test1}
+
+\begin{equation}
+\label{eq:test2}
+    f(x) = x^2
+\end{equation}
+
+Equação \ref{eq:test2}
+```
 
 ## Exercícios
 
-1. Crie um documento LaTeX com um título e um parágrafo.
-2. Crie um documento LaTeX com uma lista não ordenada e uma lista ordenada.
-3. Crie um documento LaTeX com uma tabela.
-4. Crie um documento LaTeX com uma imagem.
-5. Crie um documento LaTeX com a equação da média de uma sequeẽncia de números $X = {x_0, \dots, x_n}$:
+1. Crie um documento LaTeX com um título, duas seções e três parágrafos.
+2. Adicionar uma lista não ordenada e uma lista ordenada.
+3. Adicionar uma tabela.
+4. Adicionar com uma imagem.
+5. Adicionar subtitulos para a tabela e imagem criadas.
+6. Crie um documento LaTeX com a equação da média de uma sequeẽncia de números $X = {x_0, \dots, x_n}$:
 $$ x_\mu = \frac{\sum_{i=0}^{n} x_i}{n} $$
+7. Adicione uma referencia à imagem, tabela ou equação criada.
 
 
