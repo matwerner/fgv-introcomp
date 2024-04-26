@@ -7,7 +7,7 @@ Nesta aula, vamos aprender sobre estruturas de dados básicas em Python:
 * dicionários;
 * Strings.
 
-## Listas (Lists)
+## A. LISTAS (Lists)
 
 Uma lista em Python é uma coleção ordenada de elementos, onde cada elemento é identificado por um índice.
 
@@ -37,7 +37,7 @@ print(minha_lista[0])  # Saída: 1
 3. Remova o nome da segundo pessoa da lista.
 4. Imprima a lista de amigos em ordem alfabética.
 
-## Conjuntos (Sets)
+## B. CONJUNTOS (Sets)
 
 Um conjunto em Python é uma coleção não ordenada e sem elementos duplicados.
 
@@ -72,7 +72,7 @@ print(word in spam_words)
 3. Adicione uma cor ao primeiro conjunto.
 4. Imprima a união dos dois conjuntos.
 
-## Tuplas (Tuples)
+## C. TUPLAS (Tuples)
 
 Uma tupla em Python é uma coleção ordenada e imutável (não pode ser modificada) de elementos.
 
@@ -107,7 +107,7 @@ latlong = (40.7128, -74.0060)
 2. Acesse o terceiro elemento da tupla.
 3. Imprima a tupla completa na ordem reversa.
 
-## Dicionários (Dictionaries)
+## D. DICÍONARIOS (Dictionaries)
 
 Um dicionário em Python é uma coleção de elementos que são armazenados como pares chave-valor.
 Criando um Dicionário
@@ -150,7 +150,7 @@ print("Estoque restante:", produto["estoque"])  # Saída: 99
 3. Atualize o ano de publicação do livro.
 4. Remova o autor do dicionário.
 
-## Strings
+## E. STRINGS
 
 Uma string em Python é uma sequência de caracteres.
 
