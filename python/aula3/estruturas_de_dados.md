@@ -7,6 +7,10 @@ Nesta aula, vamos aprender sobre estruturas de dados básicas em Python:
 * dicionários;
 * Strings.
 
+<p align="center">
+  <img src="data_structures.jpg" width="600"/>
+</p>
+
 ## A. LISTAS (Lists)
 
 Uma lista em Python é uma coleção ordenada de elementos, onde cada elemento é identificado por um índice.
@@ -28,7 +32,10 @@ print(minha_lista[0])  # Saída: 1
 * Adição de elementos: ```append()```, ```extend()```, ```insert()```
 * Remoção de elementos: ```remove()```, ```pop()```, ```clear()```
 * Atualização de elementos
+* Concatenação: ```+```, ```*```
+* Fatiamento: ```my_list[begin:end:step]```
 * Pesquisa: ```in```
+* Built-in functions: ```len()```, ```sum()```, ```min()```, ```max()```, ```sorted()```
 
 ### Exercícios
 
@@ -37,7 +44,47 @@ print(minha_lista[0])  # Saída: 1
 3. Remova o nome da segundo pessoa da lista.
 4. Imprima a lista de amigos em ordem alfabética.
 
-## B. CONJUNTOS (Sets)
+
+
+## B. TUPLAS (Tuples)
+
+Uma tupla em Python é uma coleção ordenada e imutável (não pode ser modificada) de elementos.
+
+### Criando uma Tupla
+
+```python
+minha_tupla = (1, 2, 3, 4, 5)
+```
+
+### Acessando Elementos
+
+```python
+print(minha_tupla[0])  # Saída: 1
+```
+
+### Operações Básicas em Tuplas
+
+* Concatenação: ```+```, ```*```
+* Fatiamento: ```my_list[begin:end:step]```
+* Pesquisa: ```in```
+
+### Exemplo
+
+Representar coordenadas geográficas, como latitude e longitude de diferentes locais.
+
+```python
+latlong = (40.7128, -74.0060)
+```
+
+### Exercícios
+
+1. Crie uma tupla com os dias da semana.
+2. Acesse o terceiro elemento da tupla.
+3. Imprima a tupla completa na ordem reversa.
+
+
+
+## C. CONJUNTOS (Sets)
 
 Um conjunto em Python é uma coleção não ordenada e sem elementos duplicados.
 
@@ -72,40 +119,7 @@ print(word in spam_words)
 3. Adicione uma cor ao primeiro conjunto.
 4. Imprima a união dos dois conjuntos.
 
-## C. TUPLAS (Tuples)
 
-Uma tupla em Python é uma coleção ordenada e imutável (não pode ser modificada) de elementos.
-
-### Criando uma Tupla
-
-```python
-minha_tupla = (1, 2, 3, 4, 5)
-```
-
-### Acessando Elementos
-
-```python
-print(minha_tupla[0])  # Saída: 1
-```
-
-### Operações Básicas em Tuplas
-
-* Concatenação
-* Fatiamento
-
-### Exemplo
-
-Representar coordenadas geográficas, como latitude e longitude de diferentes locais.
-
-```python
-latlong = (40.7128, -74.0060)
-```
-
-### Exercícios
-
-1. Crie uma tupla com os dias da semana.
-2. Acesse o terceiro elemento da tupla.
-3. Imprima a tupla completa na ordem reversa.
 
 ## D. DICÍONARIOS (Dictionaries)
 
