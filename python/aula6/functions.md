@@ -162,8 +162,8 @@ adicionar_elemento(minha_lista)
 print(minha_lista)
 ```
 
-a. Antes de executar o código, o que você espera que seja impresso após a chamada da função adicionar_elemento?
-b. Qual é o impacto da chamada da função ```adicionar_elemento``` na lista minha_lista?
+a. Antes de executar o código, o que você espera que seja impresso após a chamada da função ```adicionar_elemento```?\
+b. Qual é o impacto da chamada da função ```adicionar_elemento``` na lista minha_lista?\
 c. Quais outros tipos de váriaveis (classes) possuem um comportamento similar? e quais possuem um comportamento diferente?
 
 ## Lidando com argumentos variáveis (*args e **kwargs)
