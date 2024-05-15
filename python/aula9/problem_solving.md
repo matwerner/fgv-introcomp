@@ -71,13 +71,40 @@ Podemos usar uma lista para armazenar as letras adivinhadas pelo jogador e atual
 
 ## Outros exemplos
 
-Para práticar as ténicas vistas hoje, você pode pensar em como desenvolveria, em python, outros jogos como Batalha Naval, Conect 4, Damas, Xadrez, Tetris, etc.
+Para práticar as ténicas vistas hoje, você pode pensar em como desenvolveria:
+* Jogos de Tabuleiro: Batalha Naval, Conect 4, Damas, Xadrez;
+* Jogos de Video Game: Tetris, Breakout, Space Invaders;
+* Jogos de Cartas: Blackjack, Poker;
+* Sistema de Agendamento: Consulta Médica, Reserva de Hotel;
+* Sistema de E-mail: Detecção de Spam, Categorização;
+* etc
+
+Não é necessário pensar nas aplicações como um todo mas, por exemplo:
+* No Xadrez, como especificar todas as posições nas quais uma peça pode se mover?
+* No Tetris, como detectar que um tetraminó vai colidir com outro?
+* Na reserva de hotel, como ver a disponibilidade de um quarto em um período especifico?
+* Na detecção de spam, como verificar se um e-mail é ou não spam?
 
 ## Exercícios
 
-Para praticarmos, você deve agora criar uma versão do jogo da velha em Python.
+### Jogo da Velha (Tic-Tac-Toe)
+
+Você está desafiado a criar uma versão do jogo da velha em Python.
 O jogo deve permitir que dois jogadores se alternem para fazer seus movimentos em um tabuleiro 3x3.
 O primeiro jogador será representado pelo símbolo 'X' e o segundo jogador pelo símbolo 'O'.
 O jogo deve verificar automaticamente se há um vencedor após cada movimento e encerrar quando um jogador ganhar ou houver um empate.
 Além disso, o programa deve fornecer feedback ao jogador, indicando se o movimento é válido ou se uma casa já foi preenchida.
-A implementação deve seguir os princípios de resolução de problemas em Python discutidos na aula, incluindo análise, decomposição e identificação de padrões.
+
+### Reserva de Quartos de Hotel
+
+Você foi encarregado de criar um sistema de reserva de quartos de hotel em Python.
+O sistema deve permitir que os clientes selecionem o período da reserva, o número de camas desejadas e o andar do hotel.
+
+Requisitos:
+
+* O sistema deve permitir que os clientes selecionem o período da reserva (* Considerar apenas periódos de 1 dia).
+* Os clientes devem ser capazes de escolher o número de camas desejadas para o quarto.
+* Os clientes devem poder selecionar o andar do hotel onde desejam ficar.
+* O sistema deve verificar a disponibilidade de quartos para o período selecionado, o número de camas e o andar desejado.
+* Se um quarto estiver disponível, o sistema deve confirmar a reserva e fornecer ao cliente um número de reserva único.
+* Se não houver quartos disponíveis para as preferências selecionadas, o sistema deve informar ao cliente e oferecer opções alternativas, se disponíveis.
