@@ -83,3 +83,17 @@
     9 6 1 | 5 3 7 | 2 8 4\
     2 8 7 | 4 1 9 | 6 3 5\
     3 4 5 | 2 8 6 | 1 7 8
+
+6. Dado um conjunto de números inteiros positivos e uma soma alvo, escreva uma função recursiva para determinar se existe um subconjunto do conjunto dado cujos elementos somam à soma alvo.
+
+    **Exemplo**:\
+    Suponha que temos o seguinte conjunto de números inteiros positivos: [3, 7, 2, 8, 4], e nossa soma alvo é 14.
+    Neste caso, queremos determinar se existe um subconjunto desse conjunto cujos elementos somam 14.
+
+    Neste exemplo, a resposta é `sim´ porque podemos formar a soma 11 com o subconjunto [3, 7, 4].
+    Cada elemento deste subconjunto soma 14 quando somado individualmente.
+
+    **Dicas**:\
+    Para resolver este problema de forma recursiva, podemos considerar duas possibilidades para cada elemento no conjunto:
+    * Incluir o elemento atual no subconjunto e verificar recursivamente se existe um subconjunto com os elementos restantes que soma à soma alvo restante.
+    * Excluir o elemento atual do subconjunto e verificar recursivamente se existe um subconjunto com os elementos restantes que soma à soma alvo original.
