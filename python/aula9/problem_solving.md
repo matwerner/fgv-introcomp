@@ -87,6 +87,32 @@ Não é necessário pensar nas aplicações como um todo mas, por exemplo:
 
 ## Exercícios
 
+### Navegação no labirinto
+
+O objetivo do jogo é navegar através de um labirinto representado por uma matriz de caracteres ASCII, 
+onde os "X" indicam paredes e espaços vazios representam caminhos pelos quais o jogador pode se mover.
+Para isso, utilize o seguinte labirinto:
+
+```python
+def generate_maze():
+    maze = [
+        "XXXXXXXXXXXXXXXX",
+        "X       X      X",
+        "X XXXXX X XXXX X",
+        "X XXXXX X XXXX X",
+        "X XXXXX X XXXX X",
+        "X              X",
+        "X XXXXX X XXXX X",
+        "X XXXXX X XXXX X",
+        "X XXXXX X XXXX X",
+        "X       X      X",
+        "XXXXXXXXXXXXXXXX"
+    ]
+    maze = [[cell for cell in row] for row in maze]
+    return maze
+```
+
+
 ### Jogo da Velha (Tic-Tac-Toe)
 
 Você está desafiado a criar uma versão do jogo da velha em Python.
