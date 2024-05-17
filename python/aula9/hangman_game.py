@@ -1,46 +1,54 @@
-import random
+# Entrada:
+hangman_words = [
+    'python',
+    'algoritmo',
+    'programacao'
+]
 
-# Lista de palavras para o jogo
-palavras = ["python", "programacao", "computador", "algoritmo", "desenvolvimento", "openai", "inteligencia"]
+num_max_errors = 5
 
-def escolher_palavra():
-    return random.choice(palavras)
+def choose_word():
+    return hangman_words[0]
 
-def mostrar_palavra(palavra, letras_adivinhadas):
-    resultado = ""
-    for letra in palavra:
-        if letra in letras_adivinhadas:
-            resultado += letra + " "
+def print_word_terminal(word, characters_used):
+    word_to_user = ''
+    for c in word:
+        if c in characters_used:
+            word_to_user += c
         else:
-            resultado += "_ "
-    return resultado
+            word_to_user += '_'
+    print(f'Palavra: {word_to_user}')
 
-def jogo_da_forca():
-    palavra_secreta = escolher_palavra()
-    letras_adivinhadas = []
-    tentativas_restantes = 6
+def print_current_game_state(word, characters_used, num_errors, num_max_errors):
+    print_word_terminal(word, characters_used)
+    print(f'Letras já utilizadas: {sorted(list(characters_used))}')
+    print(f'Número de tentativas restantes: {num_max_errors - num_errors}')
+    print()
 
-    print("Bem-vindo ao Jogo da Forca!")
-    print("Adivinhe a palavra secreta.")
+def print_win_game_state():
+    print('Você ganhou!')
+    exit()
 
-    while tentativas_restantes > 0:
-        print("\nPalavra: ", mostrar_palavra(palavra_secreta, letras_adivinhadas))
-        print("Tentativas restantes:", tentativas_restantes)
+def print_lost_game_state(word):
+    print('Você perdeu.')
+    print(f'A palavra era: {word}')
+    exit()
 
-        palpite = input("Digite uma letra: ").lower()
+# Data
+word = choose_word()
+characters_used = set()
+num_errors = 0
 
-        if palpite in letras_adivinhadas:
-            print("Você já tentou essa letra. Tente novamente.")
-        elif palpite in palavra_secreta:
-            letras_adivinhadas.append(palpite)
-            if set(letras_adivinhadas) == set(palavra_secreta):
-                print("\nParabéns! Você ganhou! A palavra era:", palavra_secreta)
-                break
-        else:
-            tentativas_restantes -= 1
-            print("Letra não encontrada. Tente novamente.")
+while num_errors < num_max_errors:
+    print_current_game_state(word, characters_used, num_errors, num_max_errors)
 
-    if tentativas_restantes == 0:
-        print("\nVocê perdeu! A palavra era:", palavra_secreta)
+    c = input('Selecione uma letra: ')
+    if c not in word:
+        num_errors += 1
+    characters_used.add(c)
 
-jogo_da_forca()
+    # Whether user won or lost
+    if set(word).issubset(characters_used):
+        print_win_game_state()
+    elif num_errors == num_max_errors:
+        print_lost_game_state(word)
