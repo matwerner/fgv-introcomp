@@ -130,6 +130,11 @@ Indexação e Fatiamento:
 * Crie uma matriz 5x5 com números de 1 a 25 e, em seguida, selecione a diagonal principal.
 * A partir da matriz identidade criada no exercício 1, altere os elementos da segunda linha para 1.
 
-Sudoku
+Funções universais:
+
+* Crie uma função que receba uma matriz como entrada e retorne um array contendo o valor máximo de cada linha da matriz.
+* Crie uma função que receba um array como entrada e aplique a raiz quadrada em todos os elementos do array.
+
+Sudoku (Em casa)
 
 * Refaça a questão 5 da lista 2 (Aula 10)
