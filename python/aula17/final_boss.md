@@ -161,16 +161,117 @@ C.
 11 16 20 23 25
 ```
 
+## 7. Infecção numa matrix 2D
+
+Você é responsável por desenvolver um programa que determine a propagação de infecções em um mundo representado por uma matriz 2D.
+O mundo é representado por uma matriz de inteiros de dimensão $m × n$, onde cada célula pode ser saudável `(0)` ou infectada `(1)`.
+Além disso, você recebe uma lista de polos de infecção, cada um representado por uma tupla $(x,y,r)$,
+onde $(x,y)$ são as coordenadas do polo de infecção e $r$ é o raio de infecção.
+Uma célula é considerada infectada se estiver dentro do raio $r$ de qualquer polo de infecção.
+
+**Entrada**
+* Um inteiro $m$ representando o número de linhas da matriz.
+* Um inteiro $n$ representando o número de colunas da matriz.
+* Uma lista de polos de infecção, onde cada polo é representado por uma tupla $(x,y,r)$.
+
+Restrições
+* $1 ≤ m,n≤100$
+* $0 ≤ x <m$
+* $0 ≤ y <n$
+* $0 ≤ r ≤ min⁡(m,n)$
+
+**Saída**
+
+A matriz 2D resultante após a propagação da infecção, onde células infectadas são marcadas com 1.
+
+## Exemplo
+
+```python
+m = 5
+n = 5
+polos_de_infeccao = [(2, 2, 1), (4, 4, 2)]
+resultado = propagar_infeccao(m, n, polos_de_infeccao)
+print(resultado)
+# 0 0 0 0 0
+# 0 1 1 1 0
+# 0 1 1 1 0
+# 0 1 1 1 1
+# 0 0 1 1 1
+```
+
+## 8. Mover Rainha
+
+Implemente um programa em Python que simule o movimento de uma rainha no tabuleiro de xadrez.
+A posição inicial da rainha é fornecida e o programa deve retornar uma matriz $8x8$,
+onde $1$ representa as posições que a rainha pode alcançar e $0$ representa as posições que a rainha não pode alcançar.
+
+Desenvolva uma função chamada `movimentos_rainha` que receba a posição inicial da rainha no formato de tupla (`linha`, `coluna`),
+onde linha e coluna são inteiros entre $1$ e $8$ que representam a posição da rainha no tabuleiro de xadrez.
+A função deve retornar uma matriz $8x8$ (lista de listas) preenchida com $0s$ e $1s$ conforme descrito acima.
+
+Regras:
+* A rainha pode se mover qualquer número de casas ao longo de uma linha, coluna ou diagonal.
+* As posições no tabuleiro são representadas por números de $1$ a $8$ tanto para linhas quanto para colunas.
+
+### Exemplo
+
+```python
+posicao_inicial = (4, 4)
+resultado = movimentos_rainha(posicao_inicial)
+print(resultado)
+# [[0, 0, 0, 1, 0, 0, 0, 1],
+#  [0, 0, 1, 0, 1, 0, 1, 0],
+#  [0, 1, 0, 1, 0, 1, 0, 1],
+#  [1, 0, 1, 1, 1, 1, 1, 1],
+#  [0, 1, 0, 1, 0, 1, 0, 1],
+#  [0, 0, 1, 0, 1, 0, 1, 0],
+#  [0, 0, 0, 1, 0, 0, 0, 1],
+#  [0, 0, 0, 0, 1, 0, 0, 0]]
+```
+
+## 9.Encaixar peças batalha naval
+
+Você foi contratado para desenvolver um programa que auxilia na montagem de um tabuleiro de batalha naval. O programa deve ser capaz de encaixar as peças de um jogo de batalha naval em um tabuleiro 2D, verificando se as peças cabem nas posições desejadas sem sobreposição.
+
+Considere as seguintes especificações:
+
+* O tabuleiro é representado por uma matriz 2D de tamanho $n×n$, onde cada célula pode estar vazia ou ocupada por parte de uma peça.
+* Cada peça tem um tamanho específico e pode ser posicionada horizontalmente ou verticalmente.
+* As peças não podem se sobrepor e não podem ficar parcialmente fora do tabuleiro.
+* A entrada do programa consiste em:
+    * Um inteiro $n$ representando o tamanho do tabuleiro.
+    * Uma lista de peças, onde cada peça é representada por uma tupla $(tamanho,orientacao,linha,coluna)$, sendo:
+        * **tamanho**: um inteiro representando o tamanho da peça.
+        * **orientacao**: uma string "H" para horizontal ou "V" para vertical.
+        * **linha**: um inteiro representando a linha inicial para posicionamento da peça.
+        * **coluna**: um inteiro representando a coluna inicial para posicionamento da peça.
+
+**Tarefa**:
+
+Implemente a função `montar_tabuleiro(n, pecas)` que receba um inteiro $n$ e uma lista de peças conforme descrito acima, e retorne a matriz representando o tabuleiro após encaixar todas as peças, ou `None` se alguma peça não puder ser encaixada corretamente.
+
+**Regras**:
+* Se uma peça não puder ser encaixada devido a sobreposição ou por estar fora do tabuleiro, o programa deve retornar `None`.
+* Cada peça deve ser representada por um número único no tabuleiro para identificar facilmente sua posição.
+
+### Exemplos
+
+```python
+n = 5
+pecas = [(3, "H", 1, 1), (1, "V", 0, 3), (4, "H", 2, 0)]
+resultado = montar_tabuleiro(n, pecas)
+print(resultado)
+# [
+#   [0, 0, 0, 2, 0],
+#   [0, 1, 1, 1, 0],
+#   [3, 3, 3, 3, 0],
+#   [0, 0, 0, 0, 0],
+#   [0, 0, 0, 0, 0]
+# ]
+```
+
+
 # A ser melhor especificado
-
-7. (Matriz 2D) Infecção numa matrix 2D
-Crie um programa que, dada uma matriz 2D representando um mundo e uma lista de polos de infecção representados por tuplas (x, y, r), verifique quais células na matriz serão infectadas. Uma célula é infectada se estiver dentro do raio r de qualquer polo de infecção.
-
-8. (Matriz 2D) Mover Rainha
-Implemente um programa em Python que simule o movimento de uma rainha no tabuleiro de xadrez. A posição inicial da rainha é fornecida e o programa deve listar todas as posições que a rainha pode alcançar.
-
-9. (Matriz 2D) Encaixar peças batalha naval
-Desenvolva um programa para encaixar peças de um jogo de batalha naval em um tabuleiro 2D. O programa deve verificar se as peças cabem nas posições desejadas sem sobreposição.
 
 10. (Texto) Alinhar palavras à direita
 Escreva um programa que alinhe à direita uma lista de palavras de diferentes comprimentos. Por exemplo, dado a lista ["gato", "cachorro", "coelho"], o programa deve imprimir:
