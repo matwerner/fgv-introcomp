@@ -175,10 +175,10 @@ Uma célula é considerada infectada se estiver dentro do raio $r$ de qualquer p
 * Uma lista de polos de infecção, onde cada polo é representado por uma tupla $(x,y,r)$.
 
 Restrições
-* $1 ≤ m,n≤100$
-* $0 ≤ x <m$
-* $0 ≤ y <n$
-* $0 ≤ r ≤ min⁡(m,n)$
+* $1 \le m,n \le 100$
+* $0 \le x \lt m$
+* $0 \le y \lt n$
+* $0 \le r \le min⁡(m,n)$
 
 **Saída**
 
