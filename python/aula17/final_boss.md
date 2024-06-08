@@ -270,32 +270,163 @@ print(resultado)
 # ]
 ```
 
+## 10. Alinhar palavras à direita
+
+Elabore um programa em Python que alinhe à direita uma lista de palavras.
+O programa deve receber uma lista de palavras e imprimir cada palavra alinhada à direita,
+considerando o comprimento da palavra mais longa na lista. Considere o seguinte exemplo de entrada e saída:
+
+```python
+palavras = ["gato", "cachorro", "coelho"]
+alinhar_direita(palavras)
+#     gato
+# cachorro
+#   coelho
+```
+
+## 11. Série de Harshad
+
+Implemente um programa em Python que gere e imprima os primeiros $n$ números da série de Harshad (ou Niven).
+Um número é considerado um número de Harshad se ele for divisível pela soma de seus dígitos.
+O seu programa deve ler o valor de $n$ do usuário e, em seguida, imprimir os primeiros $n$ números da série de Harshad.
+
+**Dicas**
+* Utilize uma função para calcular a soma dos dígitos de um número.
+* Utilize um loop para encontrar os números de Harshad e armazene-os em uma lista até que a lista contenha $n$ elementos.
+
+## 12. Validar CPF
+
+Um CPF (Cadastro de Pessoas Físicas) é composto por 11 dígitos numéricos,
+geralmente apresentados no formato "XXX.XXX.XXX-YY".
+Para ser considerado válido, um CPF deve atender aos seguintes critérios:
+
+1. Deve conter 11 dígitos numéricos.
+2. Não deve consistir de todos os dígitos iguais (por exemplo, "111.111.111-11" não é um CPF válido).
+3. Deve obedecer ao algoritmo de validação do CPF, descrito a seguir:
+    * Os primeiros 9 dígitos são os números base.
+    * O 10º dígito (primeiro dígito verificador) é calculado da seguinte forma:
+        * Multiplique os 9 primeiros dígitos pela sequência decrescente de 10 a 2.
+        * Some os resultados dessas multiplicações.
+        * Calcule o resto da divisão dessa soma por 11.
+        * Se o resto for menor que 2, o dígito verificador é 0. Se for maior ou igual a 2, o dígito verificador é 11 menos o resto.
+    * O 11º dígito (segundo dígito verificador) é calculado da mesma forma, mas agora com a sequência decrescente de 11 a 2 (considerando os 9 dígitos base mais o primeiro dígito verificador).
+
+Implemente a função `valida_cpf(cpf: str) -> bool` que recebe uma string representando o CPF no formato "XXX.XXX.XXX-YY"
+e retorna um valor booleano indicando se o CPF é válido ou não.
+
+### Exemplos
+
+```python
+print(valida_cpf("123.456.789-14"))  # Deve retornar False
+print(valida_cpf("111.444.777-35"))  # Deve retornar True
+```
+
+## 13. Validar código de barras no formato EAN-13
+
+Desenvolva um programa em Python que valide códigos de barras no formato EAN-13. O programa deve seguir os seguintes passos:
+
+1. Receber um código de barras EAN-13 como entrada.
+2. Calcular o dígito verificador com base nos primeiros 12 dígitos do código fornecido.
+3. Comparar o dígito verificador calculado com o 13º dígito fornecido.
+4. Informar se o código de barras é válido ou inválido.
+
+**Regras para cálculo do dígito verificador:**
+
+O dígito verificador (13º dígito) é calculado da seguinte forma:
+* Some todos os dígitos ímpares da posição 1 até 11.
+* Some todos os dígitos pares da posição 2 até 12 e multiplique a soma por 3.
+* Some os dois resultados obtidos.
+* Encontre o múltiplo de 10 mais próximo maior ou igual ao resultado obtido.
+* Subtraia o resultado obtido do múltiplo de 10 encontrado. O resultado é o dígito verificador.
+
+Exemplo:
+
+Para o código de barras 4006381333931:
+
+* Os 12 primeiros dígitos são: 400638133393
+* A soma dos dígitos ímpares (4 + 0 + 3 + 1 + 3 + 9) = 20
+* A soma dos dígitos pares (0 + 6 + 8 + 3 + 3 + 3) = 23, multiplicado por 3 = 69
+* Soma total = 20 + 69 = 89
+* O múltiplo de 10 mais próximo maior ou igual a 89 é 90.
+* Dígito verificador = 90 - 89 = 1
+
+## 14. Subconjuntos
+
+Desenvolva uma função recursiva em Python chamada `gerar_subconjuntos` que receba um conjunto de elementos (representado como uma lista) e retorne uma lista contendo todos os subconjuntos possíveis desse conjunto.
+
+Para isso, siga os passos abaixo:
+* Crie a função `gerar_subconjuntos` que recebe uma lista conjunto.
+* Utilize recursão para gerar todos os subconjuntos possíveis do conjunto dado.
+* Teste a função com o conjunto `[1, 2, 3]` e mostre o resultado.
+
+### Exemplo
+
+```python
+resultado = gerar_subconjuntos([1, 2, 3])
+print(resultado)
+# [[], [3], [2], [2, 3], [1], [1, 3], [1, 2], [1, 2, 3]]
+```
+
+## 15. Balanceamento de Parênteses
+
+Você foi designado para escrever um programa em Python que verifique se uma string contendo
+apenas parênteses `(` e `)` está corretamente balanceada.
+
+Uma string é considerada corretamente balanceada se:
+* Cada parêntese de abertura `(` tem um parêntese de fechamento `)` correspondente.
+* Parênteses de fechamento `)` nunca aparecem antes de um parêntese de abertura `(` correspondente.
+
+Por exemplo, as strings `()`, `(())`, e `(()())` estão balanceadas, enquanto `)(`, `(()`, e `())(` não estão.
+
+Para isso, escreva uma função recursiva chamada `verifica_balanceamento` que recebe uma string como entrada
+e retorna `True` se a string estiver corretamente balanceada e `False` caso contrário.
+
+### Exemplos
+
+```python
+print(verifica_balanceamento("()"))     # True
+print(verifica_balanceamento("(())"))   # True
+print(verifica_balanceamento("(()())")) # True
+print(verifica_balanceamento(")("))     # False
+print(verifica_balanceamento("(()"))    # False
+print(verifica_balanceamento("())("))   # False
+```
+
+## 16. Contar palavras em arquivo
+
+Você deve desenvolver um programa em Python que leia um arquivo de texto e realize as seguintes tarefas:
+
+* Contar o número total de palavras contidas no arquivo.
+* Listar as 5 palavras mais frequentes no arquivo.
+* Listar as 5 sequências de duas palavras mais frequentes no arquivo.
+
+Para a contagem das palavras e sequências:
+* Desconsidere diferenças entre maiúsculas e minúsculas (ou seja, trate todas as palavras como se fossem minúsculas).
+* Remova pontuações e outros caracteres especiais para garantir a precisão das contagens.
+
+### Exemplo
+
+```python
+texto = "A programação em Python é divertida. A programação é poderosa e simples. Python é uma linguagem versátil."
+obter_estatisticas(texto)
+# Número total de palavras: 15
+
+# Top 5 palavras mais frequentes:
+# 1. é: 3
+# 2. a: 2
+# 3. programação: 2
+# 4. python: 2
+# 5. em: 1
+
+# Top 5 sequências de duas palavras mais frequentes:
+# 1. a programação: 2
+# 2. python é: 2
+# 3. programação em: 1
+# 4. em python: 1
+# 5. é divertida: 1
+```
 
 # A ser melhor especificado
-
-10. (Texto) Alinhar palavras à direita
-Escreva um programa que alinhe à direita uma lista de palavras de diferentes comprimentos. Por exemplo, dado a lista ["gato", "cachorro", "coelho"], o programa deve imprimir:
-
-    ```
-        gato
-    cachorro
-      coelho
-    ```
-
-11. (Sequencia) Harshad or Niven series
-Implemente um programa que gere e imprima os primeiros n números da série de Harshad (ou Niven), onde cada número é divisível pela soma de seus dígitos.
-
-12. (Validação) Validar CPF
-Escreva um programa para validar números de CPF. O programa deve verificar se o CPF fornecido segue a estrutura e as regras de formação válidas.
-
-13. (Validação) Validar código de barras no formato EAN-13
-Desenvolva um programa para validar códigos de barras no formato EAN-13. O programa deve calcular o dígito verificador e compará-lo com o fornecido.
-
-14. (Recursão) Subconjuntos
-Crie um programa em Python que gere todos os subconjuntos possíveis de um conjunto dado utilizando recursão.
-
-15. (Recursão) Checar Balanceamento de Parênteses
-Escreva um programa recursivo que verifique se uma string contendo parênteses está corretamente balanceada.
 
 16. (Leitura) Contar palavras em arquivo
 Desenvolva um programa que leia um arquivo de texto e conte o número total de palavras contidas nele.
