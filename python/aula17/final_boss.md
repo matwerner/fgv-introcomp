@@ -1,4 +1,4 @@
-# Exercícios (Em construção)
+# Exercícios
 
 Lista de exercícios em preparação para A2.
 
