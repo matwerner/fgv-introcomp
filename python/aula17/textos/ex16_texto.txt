@@ -1,0 +1,5 @@
+Este é o primeiro exemplo de linha.
+Esta linha é a segunda linha do exemplo.
+O terceiro exemplo está aqui.
+Aqui temos a quarta linha de exemplo.
+E finalmente, esta é a quinta linha de exemplo.

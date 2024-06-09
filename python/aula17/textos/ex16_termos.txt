@@ -1,0 +1,4 @@
+linha
+exemplo
+segunda
+quinta

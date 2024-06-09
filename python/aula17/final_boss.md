@@ -392,7 +392,44 @@ print(verifica_balanceamento("(()"))    # False
 print(verifica_balanceamento("())("))   # False
 ```
 
-## 16. Contar palavras em arquivo
+## 16. Encontrar termos no texto 
+
+Dado o texto abaixo, escreva um programa em Python que receba uma lista de termos e reporte em quais linhas cada termo apareceu.
+
+Texto:
+
+```
+Este é o primeiro exemplo de linha.
+Esta linha é a segunda linha do exemplo.
+O terceiro exemplo está aqui.
+Aqui temos a quarta linha de exemplo.
+E finalmente, esta é a quinta linha de exemplo.
+```
+
+Lista de Termos:
+
+```
+linha
+exemplo
+segunda
+quinta
+
+```
+
+Requisitos do Programa:
+* O programa deve ler o texto e a lista de termos.
+* Para cada termo da lista, o programa deve identificar e imprimir em quais linhas (números das linhas) o termo aparece.
+* A numeração das linhas deve começar de 1.
+
+### Saída esperada
+```
+Termo 'linha' aparece nas linhas: 1, 2, 4, 5
+Termo 'exemplo' aparece nas linhas: 1, 2, 3, 4, 5
+Termo 'segunda' aparece na linha: 2
+Termo 'quinta' aparece na linha: 5
+```
+
+## 17. Contar palavras em arquivo
 
 Você deve desenvolver um programa em Python que leia um arquivo de texto e realize as seguintes tarefas:
 
@@ -403,6 +440,8 @@ Você deve desenvolver um programa em Python que leia um arquivo de texto e real
 Para a contagem das palavras e sequências:
 * Desconsidere diferenças entre maiúsculas e minúsculas (ou seja, trate todas as palavras como se fossem minúsculas).
 * Remova pontuações e outros caracteres especiais para garantir a precisão das contagens.
+
+**Bonus:** Refazer a questão considerando caracteres em vez de palavras.
 
 ### Exemplo
 
@@ -426,19 +465,100 @@ obter_estatisticas(texto)
 # 5. é divertida: 1
 ```
 
-# A ser melhor especificado
+## 18. Processar dados de dois CSVs
 
-16. (Leitura) Contar palavras em arquivo
-Desenvolva um programa que leia um arquivo de texto e conte o número total de palavras contidas nele.
+Suponha que você precise criar um programa em Python que leia dados de dois arquivos CSV e realize uma operação de junção (merge) baseada em uma coluna chave comum. Os arquivos CSV são alunos.csv e notas.csv, e ambos possuem uma coluna chamada id_aluno, que será usada como chave para a junção.
 
-17. (Leitura) Encontrar termos no texto
-Escreva um programa que procure por uma lista de termos fornecidos em um arquivo de texto e reporte quantas vezes cada termo aparece.
+O arquivo alunos.csv contém as seguintes colunas:
+* id_aluno
+* nome
+* curso
 
-18. (Leitura) Processar dados de dois CSVs
-Crie um programa que leia dados de dois arquivos CSV e realize uma operação de junção (merge) baseada em uma coluna chave comum.
+O arquivo notas.csv contém as seguintes colunas:
 
-19. (Outros) Expandir Notação Decimal
-Implemente um programa que expanda um número decimal em sua forma verbal. Por exemplo, 1234 deve ser expandido para "1000 + 200 + 30 + 4".
+* id_aluno
+* disciplina
+* nota
 
-20. (Outros) Decodifique uma mensagem utilizando Caesar Cipher
-Escreva um programa que decodifique uma mensagem criptografada utilizando a cifra de César. O programa deve aceitar uma string criptografada e uma chave de deslocamento e retornar a mensagem original. Por exemplo, para a mensagem "fdhvdu" e a chave 3, o programa deve retornar "caesar".
+Escreva um programa em Python que:
+
+* Leia os dados dos arquivos alunos.csv e notas.csv.
+* Realize uma junção (merge) entre os dados, utilizando a coluna id_aluno como chave.
+* Exiba o resultado da junção em formato tabular.
+
+**Dicas**:
+* Certifique-se de que o resultado final contenha todas as colunas de ambos os arquivos.
+* **NÃO** é permitido utilizar a biblioteca `pandas`.
+
+### Exemplo
+
+Alunos.csv:
+
+```r
+id_aluno,nome,curso
+1,Alice,Engenharia
+2,Bob,Medicina
+3,Carol,Direito
+```
+
+Notas.csv:
+```r
+id_aluno,disciplina,nota
+1,Matemática,85
+1,Física,90
+2,Biologia,78
+3,Direito Constitucional,88
+```
+
+Saída esperada:
+```r
+   id_aluno   nome       curso              disciplina  nota
+0         1  Alice  Engenharia              Matemática    85
+1         1  Alice  Engenharia                  Física    90
+2         2    Bob    Medicina                Biologia    78
+3         3  Carol     Direito  Direito Constitucional    88
+```
+
+## 19. Expandir Notação Decimal
+
+Implemente um programa em Python que expanda um número decimal inteiro positivo em sua forma verbal.
+O programa deve solicitar ao usuário que insira um número decimal e, em seguida, exibir o número na forma expandida.
+Por exemplo, se o usuário inserir o número `1234` o programa deve exibir `1000 + 200 + 30 + 4`.
+
+**Dicas:**
+* Utilize operações de divisão inteira e módulo para separar cada dígito do número.
+* Considere o valor posicional de cada dígito (unidade, dezena, centena, milhar, etc.) ao construir a forma expandida.
+
+**Restrições:**
+* O número inserido pelo usuário deve ser um inteiro positivo.
+* O programa deve lidar corretamente com números que contenham zeros em qualquer posição
+(por exemplo, `1024` deve ser expandido para `1000 + 20 + 4`).
+
+## 20. Cifra de Cesar
+
+A cifra de César é um método de criptografia que desloca cada letra de uma mensagem um número fixo de posições ao longo do alfabeto.
+Por exemplo, com uma chave de deslocamento de $3$, a letra `'A'` se torna `'D'`, `'B'` se torna `'E'`, e assim por diante.
+Para decodificar a mensagem, cada letra é deslocada de volta o mesmo número de posições.
+
+Desenvolva um programa em Python que decodifique uma mensagem criptografada utilizando a cifra de César.
+O programa deve aceitar uma string criptografada e uma chave de deslocamento, retornando a mensagem original.
+Utilize a especificação a seguir:
+* A função deve ser chamada `decodificar_cifra_cesar`.
+* A função deve receber dois parâmetros:
+    * mensagem_criptografada (uma string) que representa a mensagem a ser decodificada.
+    * chave (um inteiro) que representa o número de posições que cada letra foi deslocada na criptografia.
+* A função deve retornar uma string com a mensagem original decodificada.
+
+**Dicas:**
+* A função deve lidar apenas com letras minúsculas e deve preservar espaços e outros caracteres não alfabéticos.
+* Para converter uma letra em um número, utilizar a função `ord()`
+* Para converter um número em uma letra, utilizar a função `chr()`
+
+### Exemplos
+
+```python
+mensagem_criptografada = "fdhvdu"
+chave = 3
+resultado = decodificar_cifra_cesar(mensagem_criptografada, chave)
+print(resultado) # "caesar"
+```
