@@ -41,7 +41,7 @@ Dicas:
 
 ```python
 circulo1 = (1, 1, 2)
-circulo2 = (4, 5, 3)
+circulo2 = (5, 6, 3)
 resultado = detectar_colisao(circulo1, circulo2)
 print(resultado) # Não colidem
 
